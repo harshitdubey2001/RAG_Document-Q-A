@@ -17,7 +17,10 @@ os.environ["HF_TOKEN"]=os.getenv("HF_TOKEN")
 
 groq_api_key = os.getenv("GROQ_API_KEY")
 
-llm = ChatGroq(groq_api_key=groq_api_key,model="allam-2-7b")
+HF_TOKEN = st.secrets["HF_TOKEN"]
+GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
+
+llm = ChatGroq(groq_api_key=groq_api_key,model="llama-3.3-70b-versatile")
 
 prompt = ChatPromptTemplate.from_template(
    """
