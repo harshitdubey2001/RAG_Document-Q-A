@@ -28,6 +28,5 @@ unstructured
 numexpr
 huggingface_hub
 tiktoken
-cassio datasets
 astrapy
 pyPDF2
