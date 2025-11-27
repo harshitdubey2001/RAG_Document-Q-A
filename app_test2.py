@@ -47,6 +47,13 @@ st.title("RAG Documents Q&A with Groq")
 
 user_prompt = st.text_input("Enter your query from the research paper")
 
+if "vectors" not in st.session_state:
+    st.session_state["vectors"] = None
+
+if "embedding_done" not in st.session_state:
+    st.session_state["embedding_done"] = False
+
+
 if st.button("Document Embedding"):
     create_vector_embedding()
     st.write("Vector Database is ready")
@@ -69,4 +76,5 @@ if user_prompt:
     with st.expander("Documnets Similarity Seacrh"):
         for i ,doc in enumerate(response['context']):
             st.write(doc.page_content)
+
             st.write("-------")
